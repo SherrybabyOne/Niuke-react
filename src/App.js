@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React,{Component} from 'react';
+import axios from 'axios';
+import { withRouter } from 'react-router-dom'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+@withRouter
+class App extends Component{
+
+  componentDidMount(){
+    if(!localStorage.getItem('userInfo')){
+      this.props.history.push('/login')
+    }
+    // axios.get('/user/info')
+    //   .then(res=>{
+    //     if(res.status===200){
+    //       if(res.data.code===0){
+    //         //有登录信息
+    //       }else{
+    //         this.props.history.push('/login')
+    //       }
+    //     }
+    //   })
+  }
+  render(){
+    return (
+      <div>
+        {this.props.children}
+      </div>
+    )
+  }
 }
-
-export default App;
+export default App
