@@ -4,6 +4,8 @@ import App from './App';
 import Login from './pages/login';
 import Register from './pages/register';
 import Home from './pages/home';
+import Bossinfo from './pages/bossinfo';
+import Geniusinfo from './pages/geniusinfo';
 
 class Router extends Component{
 
@@ -15,6 +17,8 @@ class Router extends Component{
                         <Route exact path='/' component={Home} />
                         <Route exact path='/login' component={Login} />
                         <Route exact path='/register' component={Register} />
+                        <Route exact path='/bossinfo' component={Bossinfo} />
+                        <Route exact path='/geniusinfo' component={Geniusinfo} />
                     </Switch>
                 </App>
             </BrowserRouter>

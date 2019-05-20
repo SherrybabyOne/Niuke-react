@@ -4,7 +4,6 @@ import axios from 'axios';
 import { List,InputItem,WingBlank,WhiteSpace,Button } from 'antd-mobile';
 import * as utils from './../../utils/utils';
 import Logo from './../../components/logo'
-import './index.less';
 
 @createForm()
 class Login extends Component{
@@ -37,7 +36,7 @@ class Login extends Component{
                         })
                     }else if(res.data.code===0){
                         localStorage.setItem('userInfo',JSON.stringify(res.data.data))
-                        this.props.history.push(utils.getRedirectPath(res.data.data.type));
+                        this.props.history.push(utils.getRedirectPath(res.data.data));
                     }
                 }
             })

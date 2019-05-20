@@ -4,7 +4,6 @@ import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 import { List,InputItem,Radio,WingBlank,WhiteSpace,Button } from 'antd-mobile';
 import Logo from './../../components/logo'
-import './index.less';
 import * as utils from './../../utils/utils';
 const RadioItem = Radio.RadioItem;
 

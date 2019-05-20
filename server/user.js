@@ -40,6 +40,22 @@ Router.post('/register',function(req,res){
         })
     })
 })
+Router.post('/update',function(req,res){
+    const {_id} = req.body
+    User.find({_id},function(err,doc){
+        if(!doc){
+            return res.json({code:1})
+        }
+        const body = req.body;
+        User.findByIdAndUpdate(_id,body,function(err,doc){
+            const data = Object.assign({},{
+                user: doc.user,
+                type: doc.type
+            },body)
+            return res.json({code:0,data})
+        })
+    })
+})
 // Router.get('/info',function(req,res){
 //     const { userId } = req.cookies;
 //     if(!userId){
