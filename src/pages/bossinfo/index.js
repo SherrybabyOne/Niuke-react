@@ -20,7 +20,7 @@ class Bossinfo extends Component{
     handleUpdate(){
         const bossInfo = this.props.form.getFieldsValue();
         const {text} = this.state;
-        bossInfo.avator = text;
+        bossInfo.avatar = text;
         const {_id} = JSON.parse(localStorage.getItem('userInfo'))
         axios.post('/user/update',{...bossInfo,_id})
             .then(res=>{

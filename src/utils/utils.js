@@ -1,6 +1,6 @@
-export function getRedirectPath({type,avator}){
+export function getRedirectPath({type,avatar}){
     let url = type==='genius'? 'genius':'boss'
-    if(!avator){
+    if(!avatar){
         url += 'info'
     }
     return url;

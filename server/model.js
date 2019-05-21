@@ -8,7 +8,7 @@ const models = {
         'pwd':{type:String,require:true},
         'type':{type:String,require:true},
         //头像
-        'avator':{type:String},
+        'avatar':{type:String},
         //个人简介
         'desc':{type:String},
         //职位名
