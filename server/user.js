@@ -3,6 +3,7 @@ const utils = require('utility')
 const Router = express.Router();
 const model = require('./model');
 const User = model.getModel('user');
+const Chat = model.getModel('chat')
 const _filter = {'pwd': 0,'__v': 0}
 
 Router.get('/list',function(req,res){
@@ -55,6 +56,28 @@ Router.post('/update',function(req,res){
             },body)
             return res.json({code:0,data})
         })
+    })
+})
+Router.get('/getmsglist',function(req,res){
+    const _id = req.query._id;
+    User.find({},function(err,doc){
+        let users = {};
+        doc.forEach(v=>{
+            users[v._id] = {name: v.user,avatar: v.avatar}
+        })
+        Chat.find({'$or':[{from:_id},{to:_id}]},function(err,doc){
+            if(!err){
+                return res.json({code:0,msgs:doc,users:users})
+            }
+        })
+    })
+})
+Router.get('/a',function(req,res){
+    // Chat.remove({},function(err,doc){})
+    Chat.find({},function(err,doc){
+        if(!err){
+            res.json(doc)
+        }
     })
 })
 // Router.get('/info',function(req,res){

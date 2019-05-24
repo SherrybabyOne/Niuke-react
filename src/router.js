@@ -7,6 +7,7 @@ import Home from './pages/home';
 import Bossinfo from './pages/bossinfo';
 import Geniusinfo from './pages/geniusinfo';
 import Dashboard from './pages/dashboard';
+import Chat from './pages/chat';
 
 class Router extends Component{
 
@@ -20,6 +21,7 @@ class Router extends Component{
                         <Route exact path='/register' component={Register} />
                         <Route exact path='/bossinfo' component={Bossinfo} />
                         <Route exact path='/geniusinfo' component={Geniusinfo} />
+                        <Route exact path='/chat/:user' component={Chat} />
                         <Route component={Dashboard} />
                     </Switch>
                 </App>

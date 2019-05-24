@@ -7,7 +7,7 @@ const {
 } = actionCreators
 
 @connect(
-    ({chatUser})=>({chatUser}),
+    ({userList})=>({userList}),
     { getUserList}
 )
 class Boss extends Component{
@@ -18,7 +18,7 @@ class Boss extends Component{
     render(){
         return(
             <div>
-                <UserCard userList={this.props.chatUser.userList} />
+                <UserCard userList={this.props.userList.userList} />
             </div>
         )
     }

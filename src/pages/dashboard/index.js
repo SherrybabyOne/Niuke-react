@@ -1,8 +1,10 @@
 import React,{Component} from 'react';
 import { TabBar,NavBar } from 'antd-mobile';
+import { connect } from 'react-redux';
 import Boss from './../../components/boss';
 import Genius from './../../components/genius';
 import User from './../../components/user';
+import { getMsgList,sendMsg,recvMsg } from './../chat/store/actionCreators';
 
 function Msg(){
     return (
@@ -10,7 +12,11 @@ function Msg(){
     )
 }
 
-export default class Dashboard extends Component{
+@connect(
+    ({chatUser})=>({chatUser}),
+    { getMsgList,recvMsg }
+)
+class Dashboard extends Component{
 
     constructor(props){
         super(props);
@@ -20,6 +26,10 @@ export default class Dashboard extends Component{
         }
     }
     componentDidMount(){
+        if(!this.props.chatUser.chatmsg.length){
+            this.props.getMsgList();
+            this.props.recvMsg();
+        }
         const userInfo = JSON.parse(localStorage.getItem('userInfo')) || '';
         const {type} = userInfo;
         const navList =[
@@ -91,6 +101,8 @@ export default class Dashboard extends Component{
                             onPress={()=>{
                                 this.props.history.push(item.path)
                             }}
+                            badge={item.path==='/msg' ? this.props.chatUser.unread : 0}
+                            // badge={item.path==='/msg'&& this.props.chatUser.unread}
                         >
                             <NavBar mode='dark'>
                                 {this.state.navList.find(v=>v.path===this.props.location.pathname).title}
@@ -105,3 +117,5 @@ export default class Dashboard extends Component{
         )
     }
 }
+
+export default Dashboard;
