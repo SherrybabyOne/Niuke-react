@@ -4,13 +4,8 @@ import { connect } from 'react-redux';
 import Boss from './../../components/boss';
 import Genius from './../../components/genius';
 import User from './../../components/user';
+import Msg from './../../components/msg';
 import { getMsgList,sendMsg,recvMsg } from './../chat/store/actionCreators';
-
-function Msg(){
-    return (
-        <h2>消息首页</h2>
-    )
-}
 
 @connect(
     ({chatUser})=>({chatUser}),
