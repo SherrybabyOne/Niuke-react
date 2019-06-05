@@ -15,7 +15,7 @@ class Msg extends Component{
 
     componentDidMount(){
         this.props.getMsgList()
-        this.props.recvMsg()
+        // this.props.recvMsg()
     }
 
     getLast(arr){

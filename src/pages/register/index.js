@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import { createForm } from 'rc-form';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
-import { List,InputItem,Radio,WingBlank,WhiteSpace,Button } from 'antd-mobile';
+import { List,InputItem,Radio,WingBlank,Button } from 'antd-mobile';
 import Logo from './../../components/logo'
 import * as utils from './../../utils/utils';
 const RadioItem = Radio.RadioItem;

@@ -5,7 +5,7 @@ import Boss from './../../components/boss';
 import Genius from './../../components/genius';
 import User from './../../components/user';
 import Msg from './../../components/msg';
-import { getMsgList,sendMsg,recvMsg } from './../chat/store/actionCreators';
+import { getMsgList,recvMsg } from './../chat/store/actionCreators';
 
 @connect(
     ({chatUser})=>({chatUser}),
