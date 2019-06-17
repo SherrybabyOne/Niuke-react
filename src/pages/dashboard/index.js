@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import { TabBar,NavBar } from 'antd-mobile';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom'
 import Boss from './../../components/boss';
 import Genius from './../../components/genius';
 import User from './../../components/user';
@@ -83,7 +84,8 @@ class Dashboard extends Component{
 
     render(){
         const { pathname } = this.props.location;
-        return(
+        const page = this.state.navList.find(v=>v.path===pathname);
+        return page?(
             <div style={{height:'100vh'}}>
                 <TabBar tabBarPosition='bottom'>
                     {this.state.list.map(item=>(
@@ -109,7 +111,7 @@ class Dashboard extends Component{
                     ))}
                 </TabBar>
             </div>
-        )
+        ): <Redirect to='/msg'></Redirect>
     }
 }
 
