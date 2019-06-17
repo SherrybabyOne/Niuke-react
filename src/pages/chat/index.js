@@ -3,7 +3,7 @@ import { InputItem,List,NavBar,Icon,Grid } from 'antd-mobile';
 import { connect } from 'react-redux';
 import { getMsgList,sendMsg,recvMsg,readMsg } from './store/actionCreators';
 import { getChatId } from './../../utils/utils';
-import './index.less';
+import './index.css';
 const ListItem = List.Item;
 
 @connect(

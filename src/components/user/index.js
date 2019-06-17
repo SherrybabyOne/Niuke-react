@@ -18,7 +18,8 @@ class User extends Component{
             { text:'取消' },
             { text:'确认',onPress: () => {
                 localStorage.removeItem('userInfo');
-                window.location.href = window.location.href;
+                // window.location.href = window.location.href;
+                window.location.href = '/login'
             }}
         ])
     }

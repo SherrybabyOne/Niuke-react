@@ -1,6 +1,5 @@
 import React,{Component} from 'react';
 import { withRouter } from 'react-router-dom'
-import './index.less';
 
 @withRouter
 class App extends Component{
