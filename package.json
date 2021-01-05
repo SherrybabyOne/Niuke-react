@@ -11,7 +11,7 @@
     "@typescript-eslint/parser": "1.6.0",
     "antd-mobile": "^2.2.13",
     "asset-require-hook": "^1.2.0",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "babel-eslint": "10.0.1",
     "babel-loader": "8.0.5",
     "babel-plugin-named-asset-import": "^0.3.2",
